@@ -1,0 +1,62 @@
+Estrutura Inicial
+
+<canvas id="canvasPong" width="800" height="600" style="border:2px solid #FFFFFF;">
+
+</canvas>
+
+
+Adicionar imagem:
+
+<p>Imagem que pode ser usada:</p>
+<img id="nome da imagem" src="local.jpg" alt="Teste Imagem" width="220" height="277">
+
+var c = document.getElementById("canvasPong");
+var ctx = c.getContext("2d");
+var img = document.getElementById("nome da imagem");
+ctx.drawImage(img,10,10);
+
+
+Múltiplos Canvas
+
+<div id="stage">
+  <canvas id="ui-layer" width="480" height="320"></canvas>
+  <canvas id="game-layer" width="480" height="320"></canvas>
+  <canvas id="background-layer" width="480" height="320"></canvas>
+</div>
+ 
+<style>
+  #stage {
+    width: 480px;
+    height: 320px;
+    position: relative;
+    border: 2px solid black
+  }
+  canvas { position: absolute; }
+  #ui-layer { z-index: 3 }
+  #game-layer { z-index: 2 }
+  #background-layer { z-index: 1 }
+</style>
+
+
+
+Exemplo texto
+
+function draw() {
+  var ctx = document.getElementById('canvas').getContext('2d');
+  ctx.font = '48px serif';
+  ctx.fillText('Hello world', 10, 50);
+}
+
+
+Exemplo forma retangular que será usada no game
+
+function draw() {
+  var canvas = document.getElementById('canvas');
+  if (canvas.getContext) {
+    var ctx = canvas.getContext('2d');
+
+    ctx.fillRect(25, 25, 100, 100);
+    ctx.clearRect(45, 45, 60, 60);
+    ctx.strokeRect(50, 50, 50, 50);
+  }
+}
