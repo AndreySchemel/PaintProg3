@@ -60,3 +60,8 @@ function draw() {
     ctx.strokeRect(50, 50, 50, 50);
   }
 }
+
+Exemplo círculo
+
+ctx.arc(75, 75, 50, 0, Math.PI * 2, true);
+
